@@ -1,4 +1,4 @@
-import react from 'React';
+import react from 'react';
 import ReactDOM from 'react-dom';
 
 document.addEventListener("DOMContentLoaded", () => {
