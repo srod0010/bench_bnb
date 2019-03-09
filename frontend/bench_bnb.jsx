@@ -3,7 +3,7 @@ import configureStore from './store/store';
 import Root from './components/root';
 import React from 'react';
 import {RECEIVE_CURRENT_USER} from './actions/session_actions';
-import {loginUser, logout} from './actions/session_actions';
+import {login, logout} from './actions/session_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
     let store;
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // TESTING START
     window.getState = store.getState;
     window.dispatch = store.dispatch;
-    window.loginUser = loginUser;
+    window.login = login;
     window.logout = logout;
     // TESTING END
 
