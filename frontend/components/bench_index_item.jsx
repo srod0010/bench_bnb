@@ -1,12 +1,13 @@
 import React from 'react';
 
 const BenchIndexItem = (props) => {
+    // debugger;
     return(
-        <div>
-            <h1>{props.description}</h1>
-            <h1>{props.lat}</h1>
-            <h1>{props.lng}</h1>
-        </div>
+        <ul>
+            <li>{props.description}</li>
+            <li>{props.lat}</li>
+            <li>{props.lng}</li>
+        </ul>
     )
 }
 
