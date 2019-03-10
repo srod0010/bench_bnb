@@ -13,7 +13,7 @@ class BenchIndex extends React.Component {
        if (this.props.benches === undefined) {
            return <div>nothing yet</div>
        }
-
+       // add id to benches
        let benches = this.props.benches;
        let benchItems = benches.map(bench => <BenchIndexItem key={bench.id} description={bench.description} lat={bench.lat} lng={bench.lng}/>)
         return (
