@@ -20,7 +20,8 @@ class MarkerManager {
         const marker = new google.maps.Marker({
             position,
             map: this.map,
-            benchId: bench.id
+            benchId: bench.id,
+            title: bench.description
 
         })
         this.markers[marker.benchId] = marker;
