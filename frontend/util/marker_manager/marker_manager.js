@@ -8,3 +8,5 @@ class MarkerManager {
         console.log('time to update')
     }
 }
+
+export default MarkerManager;
