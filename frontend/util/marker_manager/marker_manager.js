@@ -8,11 +8,21 @@ class MarkerManager {
         const benchesObj = {};
         benches.forEach(bench => benchesObj[bench.id] = bench);
 
+        //create a marker for each bench that is in updated benches
         benches
             .filter(bench => !this.markers[bench.id])
             .forEach(newBench => this.createMarkerFromBench(newBench))
 
+        // if markers has any benches that are not in update benches remove them from this.Markers
+        Object.keys(benchesObj)
+            .forEach(id => {
+                // debugger;
+                if (!this.markers[id]) {
+                    return this.removeMarker(id)
+                }
+            })
 
+       
     }
 
     createMarkerFromBench(bench) {
@@ -25,6 +35,10 @@ class MarkerManager {
 
         })
         this.markers[marker.benchId] = marker;
+    }
+
+    removeMarker(id) {
+        delete this.markers[id]
     }
 }
 
