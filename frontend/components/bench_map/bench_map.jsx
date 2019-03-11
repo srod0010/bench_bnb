@@ -1,5 +1,6 @@
 import React from 'react';
 import MarkerManager from '../../util/marker_manager/marker_manager';
+import {withRouter} from 'react-router';
 
 class BenchMap extends React.Component {
     componentDidMount() {
@@ -30,6 +31,15 @@ class BenchMap extends React.Component {
             this.props.updateFilter(bounds)
             // debugger;
         })
+
+        google.maps.event.addListener(this.map, 'click', (e) => {
+            console.log(e)
+            // debugger;
+            let lat = e["latLng"]["lat"]()
+            let lng = e["latLng"]["lng"]()
+            let coords = {lat, lng}
+            this._handleClick(coords);
+        })
         
         
         
@@ -41,6 +51,13 @@ class BenchMap extends React.Component {
         }
     }
 
+    _handleClick(coords) {
+        this.props.history.push({
+            pathname: "benches/new",
+            search: `lat=${coords.lat}&lng=${coords.lng}`
+        });
+    }
+
     render() {
         // this ref gives us access to the map dom node
     return (
@@ -49,4 +66,4 @@ class BenchMap extends React.Component {
   }
 }
 
-export default BenchMap;
+export default withRouter(BenchMap);
