@@ -1,9 +1,7 @@
-export const fetchBenches = () => {
-    return(
-        $.ajax({
-            method: 'GET',
-            url: 'api/benches',
-            error: (err) => console.log(err)
-        })
-    )
-}
+export const fetchBenches = filter => (
+    $.ajax({
+        method: 'GET',
+        url: 'api/benches',
+        data: filter
+    })
+);
