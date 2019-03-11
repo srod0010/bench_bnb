@@ -18,12 +18,12 @@ class BenchMap extends React.Component {
             let ne = LatLng.getNorthEast();
             let sw = LatLng.getSouthWest();
 
-            let northeast = {lat: ne['lat'](), lng: ne['lng']()}
-            let southwest = {lat: sw['lat'](), lng: sw['lng']()}
+            let northEast = {lat: ne['lat'](), lng: ne['lng']()}
+            let southWest = {lat: sw['lat'](), lng: sw['lng']()}
             let bounds = {
                 bounds: {
-                    "northEast": northeast,
-                    "southWest": southwest
+                    "northEast": northEast,
+                    "southWest": southWest
                 }
             }
             // this.props.updateBounds(bounds)
