@@ -3,7 +3,7 @@ import React from 'react';
 class BenchForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = this.props.bench;
+        this.state = {description: '', seating: 2, lat: props.lat, lng: props.lng}
         this.update = this.update.bind(this);
     }
 
@@ -22,8 +22,8 @@ class BenchForm extends React.Component {
             <div className='form-container'>
                 <form>
                     <input placeholder="description" type="text" value={this.state.description} onChange={this.update('description')}/>
-                    <input placeholder="lat" type="text" value={this.state.lat} onChange={this.update('lat')}/>
-                    <input placeholder="lng" type="text" value={this.state.lng} onChange={this.update('lng')}/>
+                    <input placeholder="lat" type="text" disabled value={this.state.lat} onChange={this.update('lat')}/>
+                    <input placeholder="lng" type="text" disabled value={this.state.lng} onChange={this.update('lng')}/>
                     <input placeholder="seating" type="text" value={this.state.seating} onChange={this.update('seating')}/>
             
                 </form>
