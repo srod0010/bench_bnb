@@ -4,6 +4,7 @@ import Root from './components/root';
 import React from 'react';
 import {RECEIVE_CURRENT_USER} from './actions/session_actions';
 import {login, logout} from './actions/session_actions';
+import {fetchBenches} from './actions/bench_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
     let store;
@@ -25,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.dispatch = store.dispatch;
     window.login = login;
     window.logout = logout;
+    window.fetchBenches = fetchBenches;
     // TESTING END
 
     const root = document.getElementById('root');
