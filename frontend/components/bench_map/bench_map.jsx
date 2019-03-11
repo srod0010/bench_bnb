@@ -26,7 +26,8 @@ class BenchMap extends React.Component {
                     "southWest": southwest
                 }
             }
-            this.props.updateBounds(bounds)
+            // this.props.updateBounds(bounds)
+            this.props.updateFilter(bounds)
             // debugger;
         })
         
