@@ -6,6 +6,7 @@ class BenchIndex extends React.Component {
         super(props);
     }
     componentDidMount() {
+        // add filter
         this.props.fetchBenches()
     }
 
