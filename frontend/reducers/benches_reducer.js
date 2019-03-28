@@ -8,7 +8,10 @@ const benchesReducer = (state = {}, action) => {
         case RECEIVE_BENCHES:
             return action.benches;
         case RECEIVE_BENCH:
-            return action.bench;
+             const newBench = {
+                 [action.bench.id]: action.bench
+             };
+             return merge({}, state, newBench);
         default:
             return state
     }

@@ -28,7 +28,8 @@ class BenchMap extends React.Component {
                 }
             }
             // this.props.updateBounds(bounds)
-            this.props.updateFilter(bounds)
+            // debugger;
+            this.props.updateFilter('bounds', bounds['bounds'])
             // debugger;
         })
 
@@ -45,10 +46,8 @@ class BenchMap extends React.Component {
         
     }
 
-    componentDidUpdate(prevProps) {
-        if (this.props.benches !== prevProps.benches) {
-            this.MarkerManager.updateMarkers(this.props.benches);
-        }
+    componentDidUpdate() {
+        this.MarkerManager.updateMarkers(this.props.benches);
     }
 
     _handleClick(coords) {

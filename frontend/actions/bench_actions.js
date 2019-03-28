@@ -9,6 +9,7 @@ export const receiveBenches = benches => ({
 })
 
 export const fetchBenches = (filters) => dispatch => {
+    // debugger;
     return(
         APIUtil.fetchBenches(filters)
             .then(benches => dispatch(receiveBenches(benches)))
